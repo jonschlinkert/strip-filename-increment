@@ -1,0 +1,44 @@
+{
+  "name": "strip-filename-increment",
+  "description": "Strips the numerical increment and/or the word `copy` that is automatically generated and added to the end of a filename by an operating system Works with windows and mac-OS style increments. Useful for doing file comparisons, looking for dupes, etc.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/strip-filename-increment",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/strip-filename-increment",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/strip-filename-increment/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0",
+    "mocha": "^3.4.2"
+  },
+  "keywords": [
+    "filename",
+    "increment",
+    "strip"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}
