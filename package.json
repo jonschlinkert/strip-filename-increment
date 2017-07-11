@@ -1,6 +1,6 @@
 {
   "name": "strip-filename-increment",
-  "description": "Strips the numerical increment and/or the word `copy` that is automatically generated and added to the end of a filename by an operating system Works with windows and mac-OS style increments. Useful for doing file comparisons, looking for dupes, etc.",
+  "description": "Strips the numerical increment and/or the word `copy` that is automatically generated and added to the end of a filename by an operating system. Works with windows and mac-OS style increments. Useful when it's necessary to normalize filenames for doing file comparisons, checking for duplicates, etc.",
   "version": "0.1.0",
   "homepage": "https://github.com/jonschlinkert/strip-filename-increment",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",

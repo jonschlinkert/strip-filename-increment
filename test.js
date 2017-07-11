@@ -17,7 +17,7 @@ describe('stripIncrement', function() {
       assert.equal(stripIncrement('foo (31) - Copy - Copy'), 'foo');
     });
 
-    it('should strip OS-style increments from a filename', function() {
+    it('should strip mac OS-style increments from a filename', function() {
       assert.equal(stripIncrement('foo copy'), 'foo');
       assert.equal(stripIncrement('foo copy 1'), 'foo');
       assert.equal(stripIncrement('foo copy 2'), 'foo');
@@ -53,7 +53,7 @@ describe('stripIncrement', function() {
       assert.equal(stripIncrement('foo (22).txt'), 'foo.txt');
     });
 
-    it('should strip OS-style increments from a basename', function() {
+    it('should strip mac OS-style increments from a basename', function() {
       assert.equal(stripIncrement('foo copy.txt'), 'foo.txt');
       assert.equal(stripIncrement('foo copy 1.txt'), 'foo.txt');
       assert.equal(stripIncrement('foo copy 2.txt'), 'foo.txt');
@@ -62,7 +62,7 @@ describe('stripIncrement', function() {
       assert.equal(stripIncrement('foo copy 219 (2).txt'), 'foo.txt');
     });
 
-    it('should strip OS-style increments from a basename', function() {
+    it('should strip mac OS-style increments from a basename', function() {
       assert.equal(stripIncrement('foo.(incomplete).txt'), 'foo.txt');
       assert.equal(stripIncrement('foo copy 219.(incomplete).txt'), 'foo.txt');
       assert.equal(stripIncrement('foo copy 219.(incomplete).(incomplete).(incomplete).txt'), 'foo.txt');
