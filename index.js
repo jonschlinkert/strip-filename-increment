@@ -24,6 +24,7 @@ const constants = {
  * Remove trailing increments from the `dirname` and/or `stem` (basename
  * without extension) of the given file path or object.
  *
+ * @name strip
  * @param {Sring|Object} `file` If the file is an object, it must have a `path` property.
  * @param {Object} `options` See [available options](#options).
  * @return {String|Object} Returns the same type that was given.
@@ -51,6 +52,7 @@ const strip = (file, options) => {
  * console.log(strip.increment('foo (copy)')); => 'foo'
  * console.log(strip.increment('foo copy 2')); => 'foo'
  * ```
+ * @name .increment
  * @param {String} `input`
  * @param {Object} `options` See [available options](#options).
  * @return {String}
@@ -74,6 +76,7 @@ strip.increment = (input, options = {}) => {
  * console.log(strip.dirname('foo (copy)/bar.txt')); => 'foo'
  * console.log(strip.dirname('foo copy 2/bar.txt')); => 'foo'
  * ```
+ * @name .dirname
  * @param {String} `filepath`
  * @param {Object} `options` See [available options](#options).
  * @return {String} Returns the `dirname` of the filepath, without increments.
@@ -94,6 +97,7 @@ strip.dirname = (filepath, options) => {
  * console.log(strip.stem('foo/bar (2) copy.txt')); //=> 'bar'
  * console.log(strip.stem('foo/bar (2) - copy.txt')); //=> 'bar'
  * ```
+ * @name .stem
  * @param {String} `filepath`
  * @param {Object} `options` See [available options](#options).
  * @return {String} Returns the `stem` of the filepath, without increments.
@@ -114,6 +118,7 @@ strip.stem = (filepath, options) => {
  * console.log(strip.basename('foo/bar (2) copy.txt')); //=> 'bar.txt'
  * console.log(strip.basename('foo/bar (2) - copy.txt')); //=> 'bar.txt'
  * ```
+ * @name .basename
  * @param {String} `filepath`
  * @param {Object} `options` See [available options](#options).
  * @return {String} Returns the `basename` of the filepath, without increments.
@@ -136,6 +141,7 @@ strip.basename = (filepath, options) => {
  * console.log(strip.path('foo copy/bar (2) copy.txt')); //=> 'foo/bar.txt'
  * console.log(strip.path('foo copy/bar (2) - copy.txt')); //=> 'foo/bar.txt'
  * ```
+ * @name .path
  * @param {String} `filepath`
  * @param {Object} `options` See [available options](#options).
  * @return {String} Returns the `basename` of the filepath, without increments.
@@ -165,6 +171,7 @@ strip.path = (filepath, options) => {
  * console.log(strip({ path: 'foo copy/bar (2) - copy.txt' }));
  * //=> { path: 'foo/bar.txt', dir: 'foo', base: 'bar.txt', name: 'bar', ext: '.txt' }
  * ```
+ * @name .file
  * @param {String} `filepath`
  * @param {Object} `options` See [available options](#options).
  * @return {String} Returns the `basename` of the filepath, without increments.
