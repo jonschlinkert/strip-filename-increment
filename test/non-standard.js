@@ -3,6 +3,7 @@
 require('mocha');
 const assert = require('assert').strict;
 const strip = require('..');
+const posix = str => str.replace(/\\/g, '/');
 
 describe('non-standard', () => {
   describe('foldres or files without extensions', () => {
@@ -33,8 +34,8 @@ describe('non-standard', () => {
     it('should not remove a non-increment from a file or folder name', () => {
       assert.equal(strip('foo [1]'), 'foo [1]');
       assert.equal(strip('foo [1].txt'), 'foo [1].txt');
-      assert.equal(strip('bar [1]/foo [1].txt'), 'bar [1]/foo [1].txt');
-      assert.equal(strip('bar[1]/foo[1].txt'), 'bar[1]/foo[1].txt');
+      assert.equal(posix(strip('bar [1]/foo [1].txt')), 'bar [1]/foo [1].txt');
+      assert.equal(posix(strip('bar[1]/foo[1].txt')), 'bar[1]/foo[1].txt');
     });
   });
 

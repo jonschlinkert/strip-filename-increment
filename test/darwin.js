@@ -3,6 +3,7 @@
 require('mocha');
 const assert = require('assert').strict;
 const strip = require('..');
+const posix = str => str.replace(/\\/g, '/');
 
 describe('darwin', () => {
   describe('file name (stem)', () => {
@@ -31,12 +32,12 @@ describe('darwin', () => {
     });
 
     it('should remove mac-OS-style increments from folder and file name', () => {
-      assert.equal(strip('bar copy/foo copy 1.txt'), 'bar/foo.txt');
-      assert.equal(strip('bar copy/foo copy 2.txt'), 'bar/foo.txt');
-      assert.equal(strip('bar copy/foo copy 21.txt'), 'bar/foo.txt');
-      assert.equal(strip('bar copy/foo copy 219 (2).txt'), 'bar/foo.txt');
-      assert.equal(strip('bar copy/foo copy 219 copy 219.txt'), 'bar/foo.txt');
-      assert.equal(strip('bar copy/foo copy.txt'), 'bar/foo.txt');
+      assert.equal(posix(strip('bar copy/foo copy 1.txt')), 'bar/foo.txt');
+      assert.equal(posix(strip('bar copy/foo copy 2.txt')), 'bar/foo.txt');
+      assert.equal(posix(strip('bar copy/foo copy 21.txt')), 'bar/foo.txt');
+      assert.equal(posix(strip('bar copy/foo copy 219 (2).txt')), 'bar/foo.txt');
+      assert.equal(posix(strip('bar copy/foo copy 219 copy 219.txt')), 'bar/foo.txt');
+      assert.equal(posix(strip('bar copy/foo copy.txt')), 'bar/foo.txt');
     });
   });
 
