@@ -1,6 +1,6 @@
 {
   "name": "strip-filename-increment",
-  "description": "Strips the numerical increment and/or the word `copy` that is automatically generated and added to the end of a filename by an operating system. Works with windows and mac-OS style increments. Useful when it's necessary to normalize filenames for doing file comparisons, checking for duplicates, etc.",
+  "description": "Operating systems commonly add a trailing increment, or the word 'copy', or something similar to duplicate files. This strips those increments. Tested on Windows, MacOS, and Linux.",
   "version": "1.0.0",
   "homepage": "https://github.com/jonschlinkert/strip-filename-increment",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
@@ -14,14 +14,14 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=4"
+    "node": ">=8"
   },
   "scripts": {
     "test": "mocha"
   },
   "devDependencies": {
-    "gulp-format-md": "^1.0.0",
-    "mocha": "^3.4.2"
+    "gulp-format-md": "^2.0.0",
+    "mocha": "^6.2.0"
   },
   "keywords": [
     "filename",
